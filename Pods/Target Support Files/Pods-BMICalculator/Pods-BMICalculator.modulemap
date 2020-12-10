@@ -1,0 +1,6 @@
+framework module Pods_BMICalculator {
+  umbrella header "Pods-BMICalculator-umbrella.h"
+
+  export *
+  module * { export * }
+}

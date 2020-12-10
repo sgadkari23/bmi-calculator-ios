@@ -1,21 +1,25 @@
 //
 //  AppDelegate.swift
 //  BMICalculator
-//
-//  Created by Girish Dhoble on 12/9/20.
+//  Name: Supriya Gadkari
+//  Student Id: 30114872
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    internal func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions:
+            [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         return true
-    }
+      }
+
 
     // MARK: UISceneSession Lifecycle
 

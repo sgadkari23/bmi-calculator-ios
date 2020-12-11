@@ -10,6 +10,7 @@ import Firebase
 
 class UpdateBMIViewController: UIViewController {
 
+    @IBOutlet var weightLabelUnit: UILabel!
     @IBOutlet var UITextFieldWeight: UITextField!
     @IBOutlet var UIDatePickerDate: UIDatePicker!
     var ref: DatabaseReference!
@@ -22,7 +23,15 @@ class UpdateBMIViewController: UIViewController {
         ref = Database.database().reference()
         
         UITextFieldWeight.text = String(bmiCalculation.weight)
-        
+        if(bmiCalculation.isMetric)
+        {
+            weightLabelUnit.text = "kg"
+        }
+        else {
+            weightLabelUnit.text = "lbs"
+        }
+    
+    
         // set datepicker on view load on updating todo task
         let formater = DateFormatter()
         formater.dateFormat = "MM/dd/yyyy"

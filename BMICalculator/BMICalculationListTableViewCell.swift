@@ -13,6 +13,7 @@ class BMITableViewCell: UITableViewCell {
     @IBOutlet var weigthLabel: UILabel!
     @IBOutlet var bmiCalculationResultLabel: UILabel!
     @IBOutlet var dateOfBMICalculationLabel: UILabel!
+    @IBOutlet var weightUnitLabel: UILabel!
 }
 
 
@@ -65,6 +66,12 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
         bmiCalculation = allBMICalculations[indexPath.row]
         
         cell.weigthLabel?.text = String(bmiCalculation.weight)
+        if(bmiCalculation.isMetric) {
+            cell.weightUnitLabel?.text = "kg"
+        }
+        else {
+            cell.weightUnitLabel?.text = "lbs"
+        }
         cell.dateOfBMICalculationLabel?.text = bmiCalculation.dateOfCalculation
         cell.bmiCalculationResultLabel?.text = String(bmiCalculation.bmiCalculation)
         return cell

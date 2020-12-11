@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         ref = Database.database().reference()
         weightLabel.text = "kg"
         heightLabel.text = "cm"
+        bmiCalculationMessage.text = ""
+        bmiRangeMessage.text = ""
     }
     
     // Reset button clicked - reset to default values

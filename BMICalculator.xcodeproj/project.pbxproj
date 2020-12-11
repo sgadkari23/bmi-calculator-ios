@@ -16,7 +16,9 @@
 		68AD27F12581C67400CE1CDF /* BMICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD27F02581C67400CE1CDF /* BMICalculatorTests.swift */; };
 		68AD27FC2581C67400CE1CDF /* BMICalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD27FB2581C67400CE1CDF /* BMICalculatorUITests.swift */; };
 		68AD280D2581E45100CE1CDF /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD280C2581E45100CE1CDF /* Calculations.swift */; };
-		68AD283425832BA600CE1CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68AD283325832BA600CE1CDF /* GoogleService-Info.plist */; };
+		68AD284E2583B5CE00CE1CDF /* BMICalculationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD284D2583B5CE00CE1CDF /* BMICalculationListTableViewCell.swift */; };
+		68AD28562583DC0A00CE1CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68AD28552583DC0A00CE1CDF /* GoogleService-Info.plist */; };
+		68AD285B2583E72D00CE1CDF /* UpdateBMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD285A2583E72D00CE1CDF /* UpdateBMIViewController.swift */; };
 		713E2E21646FB525537153B1 /* Pods_BMICalculator_BMICalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21188DC70D554935BB81DE92 /* Pods_BMICalculator_BMICalculatorUITests.framework */; };
 		C459B344F9E0EEB86654DE8D /* Pods_BMICalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053651EA1D258DBB03B150EA /* Pods_BMICalculatorTests.framework */; };
 		CEE1E326C52678986BB300C9 /* Pods_BMICalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42ECBE6835314F930710888B /* Pods_BMICalculator.framework */; };
@@ -60,7 +62,9 @@
 		68AD27FB2581C67400CE1CDF /* BMICalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorUITests.swift; sourceTree = "<group>"; };
 		68AD27FD2581C67400CE1CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68AD280C2581E45100CE1CDF /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
-		68AD283325832BA600CE1CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		68AD284D2583B5CE00CE1CDF /* BMICalculationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculationListTableViewCell.swift; sourceTree = "<group>"; };
+		68AD28552583DC0A00CE1CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		68AD285A2583E72D00CE1CDF /* UpdateBMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBMIViewController.swift; sourceTree = "<group>"; };
 		6CDFE6DC9943C45BA84C19D5 /* Pods-BMICalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMICalculator.release.xcconfig"; path = "Target Support Files/Pods-BMICalculator/Pods-BMICalculator.release.xcconfig"; sourceTree = "<group>"; };
 		8D97BFE84185587ABD290DD4 /* Pods-BMICalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMICalculator.debug.xcconfig"; path = "Target Support Files/Pods-BMICalculator/Pods-BMICalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		A3F1AE0B34EC5609DCBDC2AC /* Pods-BMICalculator-BMICalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BMICalculator-BMICalculatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-BMICalculator-BMICalculatorUITests/Pods-BMICalculator-BMICalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +132,9 @@
 				68AD27E42581C67400CE1CDF /* LaunchScreen.storyboard */,
 				68AD27E72581C67400CE1CDF /* Info.plist */,
 				68AD280C2581E45100CE1CDF /* Calculations.swift */,
-				68AD283325832BA600CE1CDF /* GoogleService-Info.plist */,
+				68AD284D2583B5CE00CE1CDF /* BMICalculationListTableViewCell.swift */,
+				68AD28552583DC0A00CE1CDF /* GoogleService-Info.plist */,
+				68AD285A2583E72D00CE1CDF /* UpdateBMIViewController.swift */,
 			);
 			path = BMICalculator;
 			sourceTree = "<group>";
@@ -283,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68AD27E62581C67400CE1CDF /* LaunchScreen.storyboard in Resources */,
-				68AD283425832BA600CE1CDF /* GoogleService-Info.plist in Resources */,
+				68AD28562583DC0A00CE1CDF /* GoogleService-Info.plist in Resources */,
 				68AD27E32581C67400CE1CDF /* Assets.xcassets in Resources */,
 				68AD27E12581C67300CE1CDF /* Main.storyboard in Resources */,
 			);
@@ -416,6 +422,8 @@
 				68AD27DE2581C67300CE1CDF /* ViewController.swift in Sources */,
 				68AD27DA2581C67300CE1CDF /* AppDelegate.swift in Sources */,
 				68AD27DC2581C67300CE1CDF /* SceneDelegate.swift in Sources */,
+				68AD284E2583B5CE00CE1CDF /* BMICalculationListTableViewCell.swift in Sources */,
+				68AD285B2583E72D00CE1CDF /* UpdateBMIViewController.swift in Sources */,
 				68AD280D2581E45100CE1CDF /* Calculations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

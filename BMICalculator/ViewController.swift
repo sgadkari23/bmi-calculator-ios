@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet var userHeight: UITextField!
     @IBOutlet var bmiCalculationMessage: UILabel!
     
+    @IBOutlet var bmiRangeMessage: UILabel!
     @IBOutlet var weightLabel: UILabel!
     @IBOutlet var heightLabel: UILabel!
     
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
         userWeight.text = ""
         userHeight.text = ""
         bmiCalculationMessage.text = ""
+        bmiRangeMessage.text = ""
         bmiCalculation = Calculations()
     }
     
@@ -65,29 +67,32 @@ class ViewController: UIViewController {
         // Calculate bmi range and get message
         switch bmiCalculation.bmiCalculation  {
             case  0.0...16.0 :
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Severe Thin"
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Severe Thin"
                 
             case  16.0..<17.0:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Moderate Thinness"
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Moderate Thinness"
                 
             case  17...18.5:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Mild Thinness"
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Mild Thinness"
                
             case  18.5...25:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Normal"
-               
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Normal"
             case  25...30:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Overweight"
-              
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Overweight"
             case  30...35:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Obese Class I"
-               
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Obese Class I"
             case  35...40:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Obese Class II"
-               
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Obese Class II"
             case  40...:
-                bmiCalculationMessage.text = "BMI:\(bmiCalculation.bmiCalculation) \n Range: Obese Class III"
-              
+                bmiCalculationMessage.text = String(bmiCalculation.bmiCalculation)
+                bmiRangeMessage.text = "Obese Class III"
             default:
                 break
         }

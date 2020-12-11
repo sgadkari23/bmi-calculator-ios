@@ -1,9 +1,8 @@
 //
 //  SceneDelegate.swift
 //  BMICalculator
-//
-//  Created by Girish Dhoble on 12/9/20.
-//
+//  Name: Supriya Gadkari
+//  Student Id: 301140872
 
 import UIKit
 

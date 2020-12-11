@@ -1,9 +1,7 @@
 //
-//  BMICalculationListTableViewCell.swift
 //  BMICalculator
-//
-//  Created by 
-//
+//  Name: Supriya Gadkari
+//  Student Id: 301140872
 
 import UIKit
 import Firebase
@@ -28,26 +26,32 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // get reference to firebase
         ref = Database.database().reference()
+        // initial task count is 0
         self.taskCount = 0
         BMIListing.delegate = self
         BMIListing.dataSource = self
         self.BMIListing.rowHeight = 100.0
+        // set screen title
         self.title = "BMI Calculation History"
+        // get data from firebase to populate the table
         getDataFromFirebase()
     }
     
     func getDataFromFirebase(){
+        // call firebase to get data
         ref.child("bmiCalculator").observe(DataEventType.value, with: { (snapshot) in
-            // reset all data
+            // initialize array
             self.allBMICalculations = [Calculations]()
             self.taskCount = 0
-            
+            // parse firebase object
             if let postDict = snapshot.value as? Dictionary<String, AnyObject> {
                 for item in postDict {
                     let myBMICalculation = Calculations(key: item.key, bmi: item.value as! NSDictionary)
                     self.allBMICalculations.append(myBMICalculation)
                 }
+                // set the number of rows for table
                 self.taskCount = Int(postDict.count)
             }
             
@@ -56,31 +60,38 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
         })
     }
     
-    
+    // row count of table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.taskCount
     }
     
+    // populate each row of the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BMICalculationListing", for: indexPath) as! BMITableViewCell
+        
+        // get row number and data
         bmiCalculation = allBMICalculations[indexPath.row]
         
         cell.weigthLabel?.text = String(bmiCalculation.weight)
+        // set weight unit
         if(bmiCalculation.isMetric) {
             cell.weightUnitLabel?.text = "kg"
         }
         else {
             cell.weightUnitLabel?.text = "lbs"
         }
+        // display the row ui text labels
         cell.dateOfBMICalculationLabel?.text = bmiCalculation.dateOfCalculation
         cell.bmiCalculationResultLabel?.text = String(bmiCalculation.bmiCalculation)
         return cell
     }
     
+    // on select of row to edit the weight and date
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let subMenuVC = storyboard?.instantiateViewController(identifier: "view") as? UpdateBMIViewController
         let bmiCalculation = allBMICalculations[indexPath.row]
         subMenuVC?.bmiCalculation = bmiCalculation
+        // call update page
         self.navigationController?.pushViewController(subMenuVC!, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -91,6 +102,7 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
         // delete todo task when swiped right to left
         let delete = UIContextualAction(style: .destructive, title: "Delete"){(action,view,nil) in
             let bmiCalculation = self.allBMICalculations[indexPath.row]
+            // delete item from firebase
             self.ref.child("bmiCalculator").child(bmiCalculation.uniqueId).removeValue()
             if(self.taskCount == 1) {
                 self.navigationController?.popToRootViewController(animated: true)
@@ -100,6 +112,7 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
                 self.getDataFromFirebase()
             }
         }
+        // background color of 'delete' swipe
         delete.backgroundColor=UIColor.init(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
         return UISwipeActionsConfiguration(actions: [delete])
     }

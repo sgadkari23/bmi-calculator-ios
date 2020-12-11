@@ -28,7 +28,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         bmiCalculation = Calculations()
+        // get reference to firebase
         ref = Database.database().reference()
+        // initialize lables
         weightLabel.text = "kg"
         heightLabel.text = "cm"
         bmiCalculationMessage.text = ""
@@ -131,10 +133,13 @@ class ViewController: UIViewController {
         switch calculationType.selectedSegmentIndex
         {
             case 0:
+                // metric mode
                 bmiCalculation.isMetric = true
                 weightLabel.text = "kg"
                 heightLabel.text = "cm"
-            case 1: bmiCalculation.isMetric = false
+            case 1:
+                // imperial mode
+                bmiCalculation.isMetric = false
                 weightLabel.text = "lbs"
                 heightLabel.text = "in"
             default:

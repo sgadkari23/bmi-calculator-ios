@@ -14,29 +14,20 @@ class Calculations: NSObject {
     var weight:Double
     var height:Double
     var finalBMICalculation:Double
+    var uniqueId:String
     
-    init( name: String, age: String, gender: String, isMetric: Bool, weight: Double, height: Double, finalBMICalculation:Double) {
+    init( name: String, age: String, gender: String, isMetric: Bool, weight: Double, height: Double, finalBMICalculation:Double, uniqueId:String) {
             self.name = name
             self.age = age
             self.gender = gender
             self.isMetric = isMetric
             self.weight = weight
             self.height = height
-        self.finalBMICalculation = finalBMICalculation
-    }
-
-    init(key: String, todo: NSDictionary) {
-       
-        self.name = todo["name"] as! String
-        self.age = todo["age"] as! String
-        self.gender = todo["gender"] as! String
-        self.isMetric = todo["isMetric"] as! Bool
-        self.weight = todo["weight"] as! Double
-        self.height = todo["height"] as! Double
-        self.finalBMICalculation  = todo["finalBMICalculation"] as! Double
+            self.finalBMICalculation = finalBMICalculation
+            self.uniqueId = uniqueId
     }
 
     convenience override init() {
-        self.init(name: "", age: "", gender: "" , isMetric: true, weight: 0.0, height: 0.0, finalBMICalculation:0.0)
+        self.init(name: "", age: "", gender: "" , isMetric: true, weight: 0.0, height: 0.0, finalBMICalculation:0.0, uniqueId:"")
     }
 }

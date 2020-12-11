@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>262289450643-ef853saenpet73a89828rfnsa142t5tt.apps.googleusercontent.com</string>
+	<string>1088298045223-krhufttmp8c63d7kneeg1eq8jaug5u6v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.262289450643-ef853saenpet73a89828rfnsa142t5tt</string>
+	<string>com.googleusercontent.apps.1088298045223-krhufttmp8c63d7kneeg1eq8jaug5u6v</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDbG_fF-xVQu1PX0PUSB2EQ3F1XebG7vEM</string>
+	<string>AIzaSyC-r12DcSjN6PBx88pCPpNRFVP_Viy_NqU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>262289450643</string>
+	<string>1088298045223</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.supriyagadkari.BMICalculator</string>
 	<key>PROJECT_ID</key>
-	<string>bmicalculator-3acc8</string>
+	<string>bmicalculator-24b96</string>
 	<key>STORAGE_BUCKET</key>
-	<string>bmicalculator-3acc8.appspot.com</string>
+	<string>bmicalculator-24b96.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:262289450643:ios:ee8a3bd0771f5a84f50f66</string>
+	<string>1:1088298045223:ios:f26f602c692b7cb67c2302</string>
 </dict>
 </plist>

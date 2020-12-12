@@ -3,7 +3,7 @@
 //  BMICalculator
 //  Name: Supriya Gadkari
 //  Student Id: 301140872
-// Calculations object to store bmi calculation information
+//  Calculations object to store bmi calculation information
 
 import Foundation
 class Calculations: NSObject {

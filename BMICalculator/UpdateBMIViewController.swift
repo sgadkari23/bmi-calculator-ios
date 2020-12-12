@@ -3,6 +3,7 @@
 //  BMICalculator
 //  Name: Supriya Gadkari
 //  Student Id: 301140872
+//  BMI calculation update screen
 
 import UIKit
 import Firebase

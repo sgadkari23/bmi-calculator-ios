@@ -2,6 +2,8 @@
 //  BMICalculator
 //  Name: Supriya Gadkari
 //  Student Id: 301140872
+//  Date:12/11/2020
+//  BMI Calculation listing
 
 import UIKit
 import Firebase
@@ -86,7 +88,6 @@ class BMICalculationListTableViewCell: UIViewController, UITableViewDelegate, UI
         return cell
     }
     
-    // on select of row to edit the weight and date
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let subMenuVC = storyboard?.instantiateViewController(identifier: "view") as? UpdateBMIViewController
         let bmiCalculation = allBMICalculations[indexPath.row]
